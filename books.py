@@ -28,3 +28,8 @@ books ={
 @app.get("/")
 async def read_all_books():
     return books
+
+@app.get("/book/{book_id}")
+async def read_book(book_id:  int):
+    response = books["book"+str(book_id)]
+    return response
